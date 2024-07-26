@@ -4,7 +4,7 @@ This Flask api is intended to solve captcha from Pokemeow
 
 ⚠️ ***Python 3.10 or 3.9 is required*** ⚠️
 
-Steps:
+Steps: 
 
 ```plaintext
 pip install -r requirements.txt
