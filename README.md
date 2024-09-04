@@ -1,5 +1,4 @@
 # pokemeow captcha solver api
- 
 This Flask api is intended to solve captcha from Pokemeow
 
 ⚠️ ***Python 3.10 or 3.9 is required*** ⚠️
