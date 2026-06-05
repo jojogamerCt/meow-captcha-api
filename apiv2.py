@@ -82,7 +82,12 @@ def run_inference_for_single_image(model, image):
 
     output_dict = model(input_tensor)
 
-    num_detections = int(output_dict.pop('num_detections'))
+    num_detections = output_dict.pop('num_detections')
+    if hasattr(num_detections, 'numpy'):
+        num_detections = num_detections.numpy()
+    if hasattr(num_detections, '__len__') and len(num_detections) > 0:
+        num_detections = num_detections[0]
+    num_detections = int(num_detections)
     output_dict = {key: value[0, :num_detections].numpy() for key, value in output_dict.items()}
     output_dict['detection_classes'] = output_dict['detection_classes'].astype(np.int64)
 
